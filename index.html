@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ 
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <title>  Tarea camara 2015-2727</title>
+</head>
+<body>
+  <div class="container-fluid"class="form-horizontal">
+    <form id="form_Persona">
+      
+	  
+	  <h3> Datos a ingresar</h3>
+	  <hr/>
+	      <fieldset>
+        <div class="form-group row">
+          <label for="ced_txt" class="control-label col-sm-2">Cedula</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" readonly id="ced_txt" placeholder="402-434343466-4">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="nom_txt" class="control-label col-sm-2">Nombre</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" readonly id="nom_txt" placeholder="Oliver De Jesus">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="ap_txt" class="control-label col-sm-2">Apellido </label>
+          <div class="col-sm-5">
+            <input type="text" id="ap_txt" class="form-control" placeholder="Mejia Herrera" readonly  />
+          </div>
+        </div>
+
+          <div class="form-group row">
+            <label for="tel_txt" class="control-label col-sm-2">Telefono </label>
+            <div class="col-sm-5">
+              <input type="number" id="tel_txt" class="form-control" placeholder="809-432-5344" readOnly  />
+            </div>
+          </div>
+
+          <div class="form-group row">
+          
+            <div class="col-sm-5">
+              <button type="button" id="si_rdbtn"class="btn btn-info" disabled>Tomar foto</button>
+            </div>
+            <div id="camera_take" style="display:none;" >
+              <div class="row">
+                <div class="col-sm-4">
+                  <video id="video" width="640" height="480" autoplay></video>
+                </div>
+
+                <div class="col-sm-4">
+                  <canvas id="canvas"></canvas>
+                </div>
+                <div class="col-sm-4">
+                  <img id="photo" src="" alt="photo_usuario" style="display:none;"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-5">
+                  <button type="button"id="photo_button" class="btn btn-success">Capturar</button>
+                </div>
+                <div class"col-sm-4">
+                  <button type = "button" id="return_btn" class="btn btn-default">Regresar</button>
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+            <div class="form group row">
+              <div class="col-sm-2">
+                <button type="button" id="nv_button" class="btn btn-default"> Nuevo</button>
+              </div>
+              <div class="col-sm-2">
+                <button type="button" id="sv_button" class="btn btn-default"> Guardar</button>
+              </div>
+              <div class="col-sm-2">
+			  
+			
+                <button type="button" id="ed_button" class="btn btn-default" style="display:none;"> Editar</button>
+              </div>
+            </div>
+
+          </div>
+      </fieldset>
+    </form>
+<h1 class="text-center"> Registros</h1>
+
+  <table class="table table-striped" id="tb_persona">
+    <thead>
+      <tr class="active">
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Foto</th>
+		<th></th>
+		<th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tb_insert_persona">
+
+    </tbody>
+  </table>
+  <div id="popup" class="modal">
+
+
+  <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+
+  <img class="modal-content" id="img01">
+
+
+  <div id="caption">
+  </div>
+</div>
+  </div>
+
+<script src="functions.js"></script>
+</body>
+</html>
